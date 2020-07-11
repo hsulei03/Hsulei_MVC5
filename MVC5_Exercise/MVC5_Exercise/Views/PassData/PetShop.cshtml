@@ -1,0 +1,33 @@
+﻿@model List<string>
+@*若這裡明確指定了model型別，所以view為強型別檢視*@
+
+@{
+    ViewBag.Title = "PetShop";
+}
+
+<h2>PetShop</h2>
+
+公司名稱： @ViewData["Company"]
+<br />
+公司地址： @ViewBag.Address
+<br />
+販賣的寵物有：
+<br />
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item</li>
+    }
+</ul>
+
+
+<hr />
+強型別檢視<br />
+販賣的寵物有：
+<br />
+<ul>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li>@Model[i]</li>
+    }
+</ul>
