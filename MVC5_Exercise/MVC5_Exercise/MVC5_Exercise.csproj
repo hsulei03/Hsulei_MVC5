@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -122,12 +128,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ErrorHandlerController.cs" />
+    <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PassDataController.cs" />
+    <Compile Include="Data\MVC5_ExerciseContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Friend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +179,12 @@
     <Content Include="Views\ErrorHandler\ErrorMessage.cshtml" />
     <Content Include="Views\Employees\EmployeeList.cshtml" />
     <Content Include="Views\PassData\StronglyTypedView.cshtml" />
+    <Content Include="Views\Friends\Create.cshtml" />
+    <Content Include="Views\Friends\Delete.cshtml" />
+    <Content Include="Views\Friends\Details.cshtml" />
+    <Content Include="Views\Friends\Edit.cshtml" />
+    <Content Include="Views\Friends\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutFriend.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
