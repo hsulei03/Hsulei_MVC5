@@ -131,6 +131,7 @@
     <Compile Include="Controllers\FriendsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PassDataController.cs" />
+    <Compile Include="Controllers\RazorScoreController.cs" />
     <Compile Include="Controllers\ResultsController.cs" />
     <Compile Include="Data\MVC5_ExerciseContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +139,7 @@
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Friend.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +188,8 @@
     <Content Include="Views\Friends\Edit.cshtml" />
     <Content Include="Views\Friends\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFriend.cshtml" />
+    <Content Include="Views\RazorScore\Scores.cshtml" />
+    <Content Include="Views\RazorScore\ScoresRazor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
