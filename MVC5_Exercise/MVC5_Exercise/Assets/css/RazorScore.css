@@ -1,0 +1,30 @@
+﻿
+th {
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.table > tbody > tr:hover {
+    background-color: antiquewhite;
+}
+
+.poor {
+    color: white;
+    background-color: red;
+}
+
+.excellent {
+    background-color: aqua;
+}
+
+.top1 {
+    background-color: yellow;
+    border: 2px dashed black;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+    .top1::after {
+        content: '(總分排名第一)'
+    }

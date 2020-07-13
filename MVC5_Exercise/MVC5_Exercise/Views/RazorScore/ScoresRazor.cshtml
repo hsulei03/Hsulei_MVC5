@@ -18,99 +18,101 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var item in Model)
+        @foreach (var item in Model)
         {
-        <tr>
-            <td>@Html.DisplayFor((x) => item.Id)</td>
-            <td>@Html.DisplayFor((x) => item.Name)</td>
+            <tr>
+                <td>@Html.DisplayFor((x) => item.Id)</td>
+                <td>@Html.DisplayFor((x) => item.Name)</td>
 
-            @*中文*@
-            @if (item.Chinese < 60)
-            {
-                <td class="poor">@Html.DisplayFor((x) => item.Chinese)</td>
-            }
-            else if (item.Chinese >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor((x) => item.Chinese)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor((x) => item.Chinese)</td>
-            }
+                @*中文*@
+                @if (item.Chinese < 60)
+                {
+                    <td class="poor">@Html.DisplayFor((x) => item.Chinese)</td>
+                }
+                else if (item.Chinese >= 95)
+                {
+                    <td class="excellent">@Html.DisplayFor((x) => item.Chinese)</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor((x) => item.Chinese)</td>
+                }
 
-            @*英文*@
-            @if (item.English < 60)
-            {
-                <td class="poor">@Html.DisplayFor((x) => item.English)</td>
-            }
-            else if (item.English >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor((x) => item.English)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor((x) => item.English)</td>
-            }
+                @*英文*@
+                @if (item.English < 60)
+                {
+                    <td class="poor">@Html.DisplayFor((x) => item.English)</td>
+                }
+                else if (item.English >= 95)
+                {
+                    <td class="excellent">@Html.DisplayFor((x) => item.English)</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor((x) => item.English)</td>
+                }
 
-            @*數學*@
-            @if (item.Math < 60)
-            {
-                <td class="poor">@Html.DisplayFor((x) => item.Math)</td>
-            }
-            else if (item.Math >= 95)
-            {
-                <td class="excellent">@Html.DisplayFor((x) => item.Math)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor((x) => item.Math)</td>
-            }
+                @*數學*@
+                @if (item.Math < 60)
+                {
+                    <td class="poor">@Html.DisplayFor((x) => item.Math)</td>
+                }
+                else if (item.Math >= 95)
+                {
+                    <td class="excellent">@Html.DisplayFor((x) => item.Math)</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor((x) => item.Math)</td>
+                }
 
-            @*總分*@
-            @if (item.Id == ViewBag.TopId)
-            {
-                <td class="top1">@Html.DisplayFor((x) => item.Total)</td>
-            }
-            else
-            {
-                <td>@Html.DisplayFor((x) => item.Total)</td>
-            }
-        </tr>
+                @*總分*@
+                @if (item.Id == ViewBag.TopId)
+                {
+                    <td class="top1">@Html.DisplayFor((x) => item.Total)</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor((x) => item.Total)</td>
+                }
+            </tr>
         }
     </tbody>
 </table>
 
 @section topCSS{
-        <style>
-            th{
-                color:white;
-                background-color:black;
-                text-align:center;
-            }
+    <style>
+        th {
+            color: white;
+            background-color: black;
+            text-align: center;
+        }
 
-            .table > tbody > tr:hover{
-                background-color:antiquewhite;
-            }
+        .table > tbody > tr:hover {
+            background-color: antiquewhite;
+        }
 
-            .poor{
-                color:white;
-                background-color:red;
-            }
-            .excellent{
-                background-color:aqua;
-            }
-            .top1{
-                background-color:yellow;
-                border:2px dashed black;
-                font-weight:900;
-                font-size:1.2em;
-            }
-            .top1::after{
-                content:'(總分排名第一)'
-            }
+        .poor {
+            color: white;
+            background-color: red;
+        }
 
-        </style>
-    
+        .excellent {
+            background-color: aqua;
+        }
+
+        .top1 {
+            background-color: yellow;
+            border: 2px dashed black;
+            font-weight: 900;
+            font-size: 1.2em;
+        }
+
+            .top1::after {
+                content: '(總分排名第一)'
+            }
+    </style>
 
 
-    }
+
+}

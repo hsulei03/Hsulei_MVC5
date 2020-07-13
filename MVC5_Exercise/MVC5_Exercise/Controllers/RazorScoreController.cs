@@ -38,5 +38,19 @@ namespace MVC5_Exercise.Controllers
             ViewBag.TopId = students.Find((x) => x.Total == students.Max((y) => y.Total)).Id;
             return View(students);
         }
+
+        public ActionResult ScoresRazorPure()
+        {
+            //找出總分最高者之id
+            ViewBag.TopId = students.Find((x) => x.Total == students.Max((y) => y.Total)).Id;
+            return View(students);
+        }
+
+        public ActionResult GlobalHtmlHelper()
+        {
+            //找出總分最高者之id
+            ViewBag.TopId = students.Find((x) => x.Total == students.Max((y) => y.Total)).Id;
+            return View(students);
+        }
     }
 }

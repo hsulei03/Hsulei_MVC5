@@ -1,0 +1,73 @@
+﻿
+
+
+@model IEnumerable<MVC5_Exercise.Models.Student>
+
+@{
+    ViewBag.Title = "ScoresRazorPure";
+}
+
+@helper DisplayScore(int score)
+{
+
+    if (score < 60)
+    {
+        <td class="poor">@score</td>
+    }
+    else if (score >= 95)
+    {
+        <td class="excellent">@score</td>
+    }
+    else
+    {
+        <td>@score</td>
+    }
+
+}
+
+<h2>ScoresRazorPure</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor((m) => m.Id)</th>
+            <th>@Html.DisplayNameFor((m) => m.Name)</th>
+            <th>@Html.DisplayNameFor((m) => m.Chinese)</th>
+            <th>@Html.DisplayNameFor((m) => m.English)</th>
+            <th>@Html.DisplayNameFor((m) => m.Math)</th>
+            <th>@Html.DisplayNameFor((m) => m.Total)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor((x) => item.Id)</td>
+                <td>@Html.DisplayFor((x) => item.Name)</td>
+
+                @*中文*@
+                @DisplayScore(item.Chinese)
+
+                @*英文*@
+                @DisplayScore(item.English)
+
+                @*數學*@
+                @DisplayScore(item.Math)
+
+                @*總分*@
+                @if (item.Id == ViewBag.TopId)
+                {
+                    <td class="top1">@Html.DisplayFor((x) => item.Total)</td>
+                }
+                else
+                {
+                    <td>@Html.DisplayFor((x) => item.Total)</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section topCSS{
+    <link href="~/Assets/css/RazorScore.css" rel="stylesheet" />
+}
